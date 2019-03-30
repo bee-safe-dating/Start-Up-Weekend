@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+
+    <ion-item *ngFor="let notification of notifications">
+      <ion-label>
+        <span class="item-icon danger-bg" *ngIf="notification.type == 'liked'">
+          <ion-icon name="heart" color="light"></ion-icon>
+        </span>
+
+        <span class="item-icon secondary-bg" *ngIf="notification.type == 'commented'">
+          <ion-icon name="ios-chatboxes" color="light"></ion-icon>
+        </span>
+
+        <span class="item-icon green-bg" *ngIf="notification.type == 'friend_request'">
+          <ion-icon name="ios-add" color="light"></ion-icon>
+        </span>
+
+        <ion-text color="primary">
+          <span class="post-author">{{ notification.name }}</span>
+        </ion-text>
+        <span class="notifications-content" *ngIf="notification.type == 'liked'"> liked your post</span>
+        <span class="notifications-content" *ngIf="notification.type == 'commented'"> commented on your post</span>
+        <span class="notifications-content" *ngIf="notification.type == 'friend_request'"> wants to be your friend</span>
+
+        <p class="post-time">
+          <ion-icon name="time"></ion-icon>
+          {{ notification.time }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

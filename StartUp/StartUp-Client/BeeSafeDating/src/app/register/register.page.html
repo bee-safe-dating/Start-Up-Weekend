@@ -1,0 +1,50 @@
+<ion-content>
+  <div class="auth-page" padding>
+    <!-- Logo -->
+    <div text-center padding>
+      <h1 ion-text color="light">
+        <i class="ion-social-angular"></i>
+        <ion-icon color="light" name="logo-angular"></ion-icon>
+      </h1>
+      <ion-text color="light"><h2>Ionic 2 Social</h2></ion-text>
+      <ion-text color="light"><h5>Flat social template</h5></ion-text>
+    </div>
+
+    <!-- Login form -->
+    <ion-list>
+
+      <ion-item>
+        <ion-icon color="light" slot="start" name="ios-contact"></ion-icon>
+        <ion-input type="text" placeholder="Your name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="light" slot="start" name="ios-mail"></ion-icon>
+        <ion-input type="text" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="light" slot="start" name="ios-lock"></ion-icon>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <ion-button expand="block" color="secondary" (click)="register()">SIGN UP</ion-button>
+    </div>
+
+    <!-- Other links -->
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <ion-text color="light"><span>Forgot password?</span></ion-text>
+        </ion-col>
+
+        <ion-col width-50>
+          <ion-text color="light"><a (click)="login()">Have account? Login</a></ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

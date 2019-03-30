@@ -1,9 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="login">
+  <div class="auth-page" padding>
+    <!-- Logo -->
+    <div text-center padding>
+      <h1 ion-text color="light">
+        <i class="ion-social-angular"></i>
+        <ion-icon color="light" name="logo-angular"></ion-icon>
+      </h1>
+      <ion-text color="light"><h2>Ionic 2 Social</h2></ion-text>
+      <ion-text color="light"><h5>Flat social template</h5></ion-text>
+    </div>
 
-<ion-content>
+    <!-- Login form -->
+    <ion-list>
 
+      <ion-item>
+        <ion-icon slot="start" name="ios-mail" color="light"></ion-icon>
+        <ion-input type="text" placeholder="Email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="ios-lock" color="light"></ion-icon>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div>
+      <ion-button expand="block" color="secondary" (click)="login()">LOG IN</ion-button>
+    </div>
+
+    <!-- Social login -->
+    <div padding text-center>
+      <ion-text color="light"><span>Or login with:</span></ion-text>
+      <p>
+        <a padding class="facebook-color">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a padding class="twitter-color">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a padding class="googleplus-color">
+          <ion-icon name="logo-googleplus"></ion-icon>
+        </a>
+      </p>
+    </div>
+
+    <!-- Other links -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-text color="light"><span>Forgot password?</span></ion-text>
+        </ion-col>
+
+        <ion-col>
+          <ion-text color="light"><a (click)="register()">New here? Sign up</a></ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

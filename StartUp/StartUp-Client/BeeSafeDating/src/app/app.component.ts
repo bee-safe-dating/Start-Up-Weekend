@@ -16,9 +16,39 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Recent posts',
+      url: '/recent-posts',
+      icon: 'ios-list-box'
+    },
+    {
+      title: 'Message',
+      url: '/chats',
+      icon: 'ios-mail'
+    },
+    {
+      title: 'Notifications',
+      url: '/notifications',
+      icon: 'ios-notifications'
+    },
+    {
+      title: 'Wall posts',
+      url: '/wall-posts',
+      icon: 'ios-browsers'
+    },
+    {
+      title: 'Contacts',
+      url: '/contacts',
+      icon: 'ios-person'
+    },
+    {
+      title: 'Setting',
+      url: '/setting',
+      icon: 'ios-settings'
+    },
+    {
+      title: 'Logout',
+      url: '/login',
+      icon: 'ios-log-out'
     }
   ];
 

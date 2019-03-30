@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-avatar slot="start" (click)="viewUser(post.user_id)">
+      <img src="{{ post.face }}">
+    </ion-avatar>
+    <ion-label>
+      <ion-text color="primary">
+        <h2 class="post-author" (click)="viewUser(post.user_id)">{{ post.name }}</h2>
+      </ion-text>
+      <span class="post-time">
+      <ion-icon name="time"></ion-icon>
+      {{ post.time }}
+    </span>
+    </ion-label>
+  </ion-item>
+
+  <div padding>
+    <img class="full-image" *ngIf="post.image" src="{{ post.image }}">
+    <p>{{ post.content}}</p>
+
+    <p>
+      <a (click)="toggleLike(post)" class="subdued">
+        <ion-icon name="thumbs-up" color="primary" *ngIf="post.liked"></ion-icon>
+        <ion-icon name="thumbs-up" color="medium" *ngIf="!post.liked"></ion-icon>
+        {{ post.likeCount}}
+      </a>
+      <a class="subdued">
+        <ion-icon name="chatboxes" color="primary"></ion-icon>
+        {{ post.commentCount}}
+      </a>
+    </p>
+
+    <ion-item class="post-comment" *ngFor="let comment of post.comments">
+      <ion-avatar slot="start" (click)="viewUser(comment.user_id)">
+        <img src="{{ comment.face }}">
+      </ion-avatar>
+
+      <ion-label>
+        <ion-text color="primary"><h3 class="post-author">
+          {{ comment.name }}
+        </h3></ion-text>
+        <p text-wrap>{{ comment.content}}</p>
+        <a class="subdued like-count">
+          <ion-icon name="heart" color="danger" *ngIf="comment.liked"></ion-icon>
+          <ion-icon name="heart" color="medium" *ngIf="!comment.liked"></ion-icon>
+          {{ comment.likeCount}}
+        </a>
+        <span class="post-time">
+        <ion-icon name="time"></ion-icon>
+        {{ comment.time }}
+      </span>
+      </ion-label>
+    </ion-item>
+
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>Chats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item-sliding *ngFor="let chat of chats">
+
+      <ion-item text-wrap (click)="viewChat(chat.id)">
+        <ion-avatar slot="start">
+          <img class="profile-picture" src="{{ chat.face }}" alt=""/>
+        </ion-avatar>
+        <ion-label>
+          <ion-text color="primary"><h2>{{chat.name}}</h2></ion-text>
+          <p>{{chat.lastText}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options>
+        <ion-item-option color="warning">
+          Mute
+        </ion-item-option>
+        <ion-item-option color="danger">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,45 @@
+.timeline-list {
+  padding-top: 1em;
+
+  ion-item {
+    padding: 0;
+
+    ion-label {
+      border-bottom: none;
+      margin: 0 8px 0 8px;
+
+      .item-body {
+        border-left: 1px solid var(--ion-color-primary);
+        padding-top: 0.4em;
+        padding-left: 0.8em;
+      }
+
+      .item-header-img {
+        position: absolute;
+        top: 0;
+        left: 0.3em;
+
+        .profile-picture {
+          width: 2em;
+          height: 2em;
+        }
+      }
+
+      .post-author {
+        margin-left: 0.5em;
+      }
+
+      .post-time {
+        position: absolute;
+        top: 0.5em;
+        right: 1.5em;
+      }
+
+      .post-content {
+        margin-top: 1em;
+        border-bottom: 1px solid var(--ion-color-light);
+        padding-bottom: 1em;
+      }
+    }
+  }
+}

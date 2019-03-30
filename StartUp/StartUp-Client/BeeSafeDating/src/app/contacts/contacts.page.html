@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>Contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="search-form">
+    <ion-icon name="ios-search"></ion-icon>
+    <ion-input type="text" placeholder="{{ contacts.length }} contacts"></ion-input>
+  </div>
+
+  <ion-list lines="full">
+
+    <ion-item-sliding *ngFor="let contact of contacts">
+
+      <ion-item>
+        <ion-avatar slot="start" (click)="viewUser(contact.id)">
+          <img class="profile-picture" src="{{ contact.face }}" alt=""/>
+        </ion-avatar>
+
+        <ion-label>
+          <div>
+            <ion-text color="primary">
+              <h3 (click)="viewUser(contact.id)">{{ contact.name }}</h3>
+            </ion-text>
+            <ion-badge color="primary" *ngIf="contact.group == 'Family'">Family</ion-badge>
+            <ion-badge color="success" *ngIf="contact.group == 'Friend'">Friend</ion-badge>
+          </div>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="medium">
+          <ion-icon name="more"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="success">
+          <ion-icon name="call"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="primary">
+          <ion-icon name="text"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
