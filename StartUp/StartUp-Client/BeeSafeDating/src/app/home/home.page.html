@@ -4,12 +4,16 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      Home 
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+     <div>
+      <ion-button expand="block" color="secondary" (click)="pickImage()">takepicture</ion-button>
+    </div>
   <ion-card *ngFor="let post of posts">
     <ion-item lines="none">
       <ion-avatar slot="start" (click)="viewUser(post.user_id)">

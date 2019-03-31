@@ -12,7 +12,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-
+import { Camera } from '@ionic-native/camera/ngx';
+import { File } from '@ionic-native/file/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,6 +28,8 @@ import { environment } from '../environments/environment';
   providers: [
     StatusBar,
     SplashScreen,
+      Camera,
+      File,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
