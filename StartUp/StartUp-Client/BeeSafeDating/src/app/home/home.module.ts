@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-
+import { FileStorageService } from './../services/storage.fileservice';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -18,6 +18,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+    providers: [FileStorageService],
 })
 export class HomePageModule {}

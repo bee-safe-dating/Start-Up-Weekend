@@ -1,3 +1,5 @@
+import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
+import { FileStorageService } from './../services/storage.fileservice';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PostService } from '../services/post-service';
@@ -10,7 +12,7 @@ import { PostService } from '../services/post-service';
 export class HomePage {
   public posts: any;
 
-  constructor(public nav: NavController, public postService: PostService) {
+  constructor(public nav: NavController, public postService: PostService, private filestore: FileStorageService,private camera: Camera) {
     this.posts = postService.getAll();
   }
 
@@ -29,7 +31,25 @@ export class HomePage {
   viewPost(postId) {
     this.nav.navigateForward('post/' + postId)
   }
+ async pickImage() {
+    const options: CameraOptions = {
+      quality: 80,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    };
 
+    try {
+      let cameraInfo = await this.camera.getPicture(options);
+      let blobInfo = await this.filestore.makeFileIntoBlob(cameraInfo);
+      let uploadInfo: any = await this.filestore.uploadToFirebase(blobInfo);
+
+      alert("File Upload Success " + uploadInfo.fileName);
+    } catch (e) {
+      console.log(e.message);
+      alert("File Upload Error " + e.message);
+    }
+  }
   // on click, go to user timeline
   viewUser(userId) {
     this.nav.navigateForward('user/' + userId)
