@@ -4,6 +4,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { File } from "@ionic-native/file/ngx";
 // FIREBASE
 import * as firebase from "firebase";
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class FileStorageService {
 
 //methods
 uploadToFirebase(_imageBlobInfo) {
+    firebase.initializeApp(environment.firebase);
     console.log("uploadToFirebase");
     return new Promise((resolve, reject) => {
       let fileRef = firebase.storage()

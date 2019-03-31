@@ -31,8 +31,7 @@
             <ion-text color="primary">
               <h3 (click)="viewUser(contact.id)">{{ contact.name }}</h3>
             </ion-text>
-            <ion-badge color="primary" *ngIf="contact.group == 'Family'">Family</ion-badge>
-            <ion-badge color="success" *ngIf="contact.group == 'Friend'">Friend</ion-badge>
+            <ion-badge color="success">Friend</ion-badge>
           </div>
         </ion-label>
       </ion-item>

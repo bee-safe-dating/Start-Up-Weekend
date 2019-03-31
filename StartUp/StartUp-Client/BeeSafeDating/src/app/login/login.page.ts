@@ -12,7 +12,8 @@ export class LoginPage {
   public email: string;
   public password: string;
   constructor(public nav: NavController, private auth: AuthService, private alertController: AlertController) {
-
+    this.email = 'alana@mailinator.com';
+    this.password = '123456';
   }
 
   register() {

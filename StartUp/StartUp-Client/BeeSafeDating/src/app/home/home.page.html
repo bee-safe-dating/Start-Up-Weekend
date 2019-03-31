@@ -11,14 +11,8 @@
 </ion-header>
 
 <ion-content>
-     <div>
-      <ion-button expand="block" color="secondary" (click)="pickImage()">takepicture</ion-button>
-    </div>
   <ion-card *ngFor="let post of posts">
     <ion-item lines="none">
-      <ion-avatar slot="start" (click)="viewUser(post.user_id)">
-        <img src="{{ post.face }}">
-      </ion-avatar>
       <ion-label>
         <h2 (click)="viewUser(post.user_id)">{{ post.name }}</h2>
         <p>{{ post.time }}</p>
@@ -28,13 +22,7 @@
     <ion-item class="post-body" lines="none">
       <ion-label text-wrap>
         <div (click)="viewPost(post.id)">
-          <img class="full-image" *ngIf="post.image" src="{{ post.image }}">
-          <p padding-top padding-bottom>{{ post.content }}</p>
-        </div>
-
-        <div>
-          <span (click)="viewPost(post.id)" class="subdued">{{ post.likeCount}} Likes</span>
-          <span (click)="viewPost(post.id)" class="subdued" margin-left>{{ post.commentCount}} Comments</span>
+          <img class="ef-post-image" *ngIf="post.image" src="{{ post.image }}">
         </div>
       </ion-label>
     </ion-item>

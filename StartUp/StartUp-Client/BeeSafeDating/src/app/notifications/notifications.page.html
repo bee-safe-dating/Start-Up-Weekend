@@ -31,8 +31,8 @@
         <ion-text color="primary">
           <span class="post-author">{{ notification.name }}</span>
         </ion-text>
-        <span class="notifications-content" *ngIf="notification.type == 'liked'"> liked your post</span>
-        <span class="notifications-content" *ngIf="notification.type == 'commented'"> commented on your post</span>
+        <span class="notifications-content" *ngIf="notification.type == 'liked'"> liked your profile</span>
+        <span class="notifications-content" *ngIf="notification.type == 'commented'"> messaged you</span>
         <span class="notifications-content" *ngIf="notification.type == 'friend_request'"> wants to be your friend</span>
 
         <p class="post-time">
