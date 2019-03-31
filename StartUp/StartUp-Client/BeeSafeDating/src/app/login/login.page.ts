@@ -1,6 +1,6 @@
 import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ export class LoginPage {
 
   public email: string;
   public password: string;
-  constructor(public nav: NavController, private auth: AuthService) {
+  constructor(public nav: NavController, private auth: AuthService, private alertController: AlertController) {
 
   }
 
@@ -26,7 +26,17 @@ export class LoginPage {
         this.nav.navigateRoot('home');
       })
       .catch(() => {
-        alert('FAILED');
+        this.presentAlert();
       });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Denied',
+      message: 'Email or Password incorrect',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }
