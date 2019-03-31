@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth.service';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
@@ -8,7 +9,9 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage {
 
-  constructor(public nav: NavController) {
+  public email: string;
+  public password: string;
+  constructor(public nav: NavController, private auth: AuthService) {
 
   }
 
@@ -18,6 +21,12 @@ export class LoginPage {
 
   login() {
     // add your check auth here
-    this.nav.navigateRoot('home');
+    this.auth.emailLogin(this.email, this.password)
+      .then(() => {
+        this.nav.navigateRoot('home');
+      })
+      .catch(() => {
+        alert('FAILED');
+      });
   }
 }

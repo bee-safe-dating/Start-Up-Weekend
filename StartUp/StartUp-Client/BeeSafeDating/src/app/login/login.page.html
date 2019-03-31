@@ -2,12 +2,7 @@
   <div class="auth-page" padding>
     <!-- Logo -->
     <div text-center padding>
-      <h1 ion-text color="light">
-        <i class="ion-social-angular"></i>
-        <ion-icon color="light" name="logo-angular"></ion-icon>
-      </h1>
-      <ion-text color="light"><h2>Ionic 2 Social</h2></ion-text>
-      <ion-text color="light"><h5>Flat social template</h5></ion-text>
+      <ion-text color="light"><h2>Bee Safe Dating</h2></ion-text>
     </div>
 
     <!-- Login form -->
@@ -15,12 +10,12 @@
 
       <ion-item>
         <ion-icon slot="start" name="ios-mail" color="light"></ion-icon>
-        <ion-input type="text" placeholder="Email"></ion-input>
+        <ion-input [(ngModel)]="email" type="text" placeholder="Email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon slot="start" name="ios-lock" color="light"></ion-icon>
-        <ion-input type="password" placeholder="Password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
       </ion-item>
 
     </ion-list>
