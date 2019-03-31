@@ -5,7 +5,7 @@ export let POSTS = [
     name: 'Ben Sparrow',
     content: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so...',
     image: 'https://firebasestorage.googleapis.com/v0/b/beesafe-cf59b.appspot.com/o/Dude1.jpg?alt=media&token=11b56e86-3c63-4616-a6b1-95d96d44da1c',
-    face: 'assets/img/thumb/ben.png',
+    face: 'https://firebasestorage.googleapis.com/v0/b/beesafe-cf59b.appspot.com/o/Alana.JPG?alt=media&token=58805d53-866e-403c-9e2d-63edab92ade5',
     time: '24 years old',
     liked: false,
     likeCount: 2,

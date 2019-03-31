@@ -10,10 +10,14 @@ import { PostService } from '../services/post-service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public posts: any;
+  public index: number;
+  public post: any;
+  public posts: any[];
 
   constructor(public nav: NavController, public postService: PostService, private filestore: FileStorageService,private camera: Camera) {
     this.posts = postService.getAll();
+    this.post = this.posts[0];
+    this.index = 0;
   }
 
   toggleLike(post) {
@@ -53,5 +57,15 @@ export class HomePage {
   // on click, go to user timeline
   viewUser(userId) {
     this.nav.navigateForward('user/' + userId)
+  }
+
+  removeBy() {
+    this.index = this.index + 1;
+
+    if (this.index > 3) {
+      this.index = 0;
+    }
+
+    this.post = this.posts[this.index];
   }
 }

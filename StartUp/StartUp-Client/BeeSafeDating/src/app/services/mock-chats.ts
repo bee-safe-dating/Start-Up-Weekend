@@ -3,7 +3,7 @@ export let CHATS = [
     id: 0,
     name: 'Ben Sparrow',
     lastText: 'You on your way?',
-    face: 'assets/img/thumb/ben.png',
+    face: 'https://firebasestorage.googleapis.com/v0/b/beesafe-cf59b.appspot.com/o/Alana.JPG?alt=media&token=58805d53-866e-403c-9e2d-63edab92ade5',
     messages: [
       {
         type: 'received',
@@ -66,7 +66,7 @@ export let CHATS = [
     id: 5,
     name: 'Ben Sparrow',
     lastText: 'You on your way?',
-    face: 'assets/img/thumb/ben.png'
+    face: 'https://firebasestorage.googleapis.com/v0/b/beesafe-cf59b.appspot.com/o/Alana.JPG?alt=media&token=58805d53-866e-403c-9e2d-63edab92ade5'
   },
   {
     id: 6,

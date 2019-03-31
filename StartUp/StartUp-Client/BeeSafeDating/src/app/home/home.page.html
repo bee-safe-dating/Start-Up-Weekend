@@ -11,7 +11,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor="let post of posts">
+    <sw-card-wrapper #cardWrapper>
+  <ion-card
+    swSwipeable
+    [orientation]="'x'"
+    (swipe)="removeBy()"
+  >
     <ion-item lines="none">
       <ion-label>
         <h2 (click)="viewUser(post.user_id)">{{ post.name }}</h2>
@@ -43,4 +48,5 @@
     </ion-grid>
 
   </ion-card>
+</sw-card-wrapper>
 </ion-content>
